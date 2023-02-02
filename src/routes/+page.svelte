@@ -33,6 +33,10 @@
 	}
 </script>
 
+<svelte:head>
+  <title>Countdown</title>
+</svelte:head>
+
 <section class="flex flex-col items-center justify-center h-screen font-source">
 	<div class="lg:flex-1" />
 	<div class="px-16 py-4 md:px-32 lg:px-42 lg:pb-20">
