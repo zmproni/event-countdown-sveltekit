@@ -1,5 +1,5 @@
 {
-	"name": "event-countdown-personal-doneboredly",
+	"name": "event-countdown-doneboredly",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -13,6 +13,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^1.0.0",
+		"@sveltejs/adapter-node": "^1.0.0-next.106",
 		"@sveltejs/kit": "^1.0.0",
 		"autoprefixer": "^10.4.13",
 		"eslint": "^8.28.0",
