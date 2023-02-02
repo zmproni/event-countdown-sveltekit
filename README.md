@@ -1,9 +1,9 @@
 # Personal TODO list 
-- Create Project
-- Set up site
-- Simple countdown 
-- Connect to DB 
-- Countdown based on DB
+- o Create Project 
+- o Set up site
+- o Simple countdown 
+- o Connect to DB 
+- o Countdown based on DB
 - Better background and colors
 - At 0 celebratory sound and visuals
 - Fix timezone calculations
