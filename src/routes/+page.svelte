@@ -1,16 +1,12 @@
 <script>
+// @ts-nocheck
 	import DateSegment from './DateSegment.svelte';
 	import { current } from './time.js';
-	import { Duration, DateTime } from 'luxon';
+	import { DateTime } from 'luxon';
 
 	export let data;
-	/**
-	 * @type {DateTime}
-	 */
+
 	let date;
-	/**
-	 * @type {{days:number, hours:number, minutes:number, seconds:number, negative:boolean}}
-	 */
 	let difference;
 
 	const { zone, dateTime, message } = data.countdown[0];
@@ -18,17 +14,18 @@
 
 	$: {
 		const differenceMillis = target.diff($current);
-		// @ts-ignore
-		difference = differenceMillis
+
+		const difference_ = differenceMillis
 			.rescale()
 			.shiftTo('days', 'hours', 'minutes', 'seconds', 'milliseconds')
 			.toObject();
+		
 		difference = {
-			days: Math.abs(difference.days),
-			hours: Math.abs(difference.hours),
-			minutes: Math.abs(difference.minutes),
-			seconds: Math.abs(difference.seconds),
-			negative: (differenceMillis.toMillis() < 0)
+			days: Math.abs(difference_.days),
+			hours: Math.abs(difference_.hours),
+			minutes: Math.abs(difference_.minutes),
+			seconds: Math.abs(difference_.seconds),
+			negative: (differenceMillis_.toMillis() < 0)
 		}
 	}
 </script>

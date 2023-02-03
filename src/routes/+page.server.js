@@ -1,4 +1,4 @@
-import { countdown } from '../db/countdown';
+import { countdown } from '$db/countdown';
 
 export const load = async () => {
 	const data = await countdown
