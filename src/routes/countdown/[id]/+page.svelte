@@ -29,7 +29,7 @@
 </script>
 
 <svelte:head>
-	<title>{difference.days}d:{difference.hours}h:{difference.minutes}m:{difference.seconds}s - {message}</title>
+	<title>{message} - {difference.days}d:{difference.hours}h:{difference.minutes}m:{difference.seconds}s</title>
 </svelte:head>
 
 <section class="flex flex-col items-center justify-center h-screen font-source">

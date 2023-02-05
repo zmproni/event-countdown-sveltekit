@@ -37,6 +37,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@esbuild/linux-arm64": "^0.17.5",
+		"@sveltejs/adapter-node": "^1.1.6",
 		"luxon": "^3.2.1",
 		"mongoose": "^6.9.0"
 	}
