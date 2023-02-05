@@ -17,8 +17,8 @@
 			.rescale()
 			.shiftTo('days', 'hours', 'minutes', 'seconds', 'milliseconds')
 			.toObject();
-    
-    difference = {
+
+		difference = {
 			days: Math.abs(shifted.days),
 			hours: Math.abs(shifted.hours),
 			minutes: Math.abs(shifted.minutes),
@@ -29,7 +29,9 @@
 </script>
 
 <svelte:head>
-	<title>{message} - {difference.days}d:{difference.hours}h:{difference.minutes}m:{difference.seconds}s</title>
+	<title
+		>{message} - {difference.days}d:{difference.hours}h:{difference.minutes}m:{difference.seconds}s</title
+	>
 </svelte:head>
 
 <section class="flex flex-col items-center justify-center h-screen font-source">
@@ -39,7 +41,9 @@
 	</div>
 	<div class="flex flex-row justify-center p-4 divide flex-nowrap">
 		{#if difference.negative}
-			<span class="w-10 px-2 text-5xl font-black text-gray-900 lg:w-44 lg:text-8xl font-rubik">-</span>
+			<span class="w-10 px-2 text-5xl font-black text-gray-900 lg:w-44 lg:text-8xl font-rubik"
+				>-</span
+			>
 		{/if}
 		<DateSegment number={difference.days} dateType={'Days'} />
 		<span class="my-2 font-bold lg:text-6xl">:</span>
