@@ -1,61 +1,10 @@
 <script>
-// @ts-nocheck
-	import DateSegment from './DateSegment.svelte';
-	import { current } from './time.js';
-	import { DateTime } from 'luxon';
+  import { goto } from '$app/navigation';
+	import { onMount } from "svelte";
 
-	export let data;
-
-	let date;
-	let difference;
-
-	const { zone, dateTime, message } = data.countdown[0];
-	const target = DateTime.fromISO(dateTime).setZone(zone);
-
-	$: {
-		const differenceMillis = target.diff($current);
-
-		const difference_ = differenceMillis
-			.rescale()
-			.shiftTo('days', 'hours', 'minutes', 'seconds', 'milliseconds')
-			.toObject();
-		
-		difference = {
-			days: Math.abs(difference_.days),
-			hours: Math.abs(difference_.hours),
-			minutes: Math.abs(difference_.minutes),
-			seconds: Math.abs(difference_.seconds),
-			negative: (differenceMillis_.toMillis() < 0)
-		}
-	}
+  onMount(() => {
+    //TODO: Add accounts
+    //TODO: Remove temporary redirect
+    goto('/countdown/63dddefa1cc5d6df76a5a7f6');
+  });
 </script>
-
-<svelte:head>
-  <title>Countdown</title>
-</svelte:head>
-
-<section class="flex flex-col items-center justify-center h-screen font-source">
-	<div class="lg:flex-1" />
-	<div class="px-16 py-4 md:px-32 lg:px-42 lg:pb-20">
-		<h2 class="text-3xl text-center text-gray-900 lg:text-5xl lg:leading-normal">{message}</h2>
-	</div>
-	<div class="flex flex-row justify-center p-4 divide flex-nowrap">
-		{#if difference.negative} 
-			<span class="w-10 px-2 text-5xl font-black text-gray-900 lg:w-44 lg:text-8xl font-rubik">-</span>
-		{/if}
-		<DateSegment number={difference.days} dateType={'Days'} />
-		<span class="my-2 font-bold lg:text-6xl">:</span>
-		<DateSegment number={difference.hours} dateType={'Hours'} />
-		<span class="my-2 font-bold lg:text-6xl">:</span>
-		<DateSegment number={difference.minutes} dateType={'Minutes'} />
-		<span class="my-2 font-bold lg:text-6xl">:</span>
-		<DateSegment number={difference.seconds} dateType={'Seconds'} />
-	</div>
-	<div class="px-4 pb-16 text-center text-gray-600 lg:pt-20 lg:leading-normal">
-		<p>
-			{$current.toLocaleString(DateTime.DATETIME_FULL)}<br />
-			{target.toLocaleString(DateTime.DATETIME_FULL)}
-		</p>
-	</div>
-	<div class="lg:flex-1" />
-</section>
