@@ -9,8 +9,12 @@ export const load = (async ({ params }) => {
     throw error(404, 'Not found'); 
   } 
 
+  let countdown;
+
   await mongo.connect()
-  const countdown = await CountdownModel.findById(params.id).lean()
+  if (mongo.connection.code === 1) {
+    countdown = await CountdownModel.findById(params.id).lean()
+  }
   await mongo.disconnect()
 
   if(!countdown) {
