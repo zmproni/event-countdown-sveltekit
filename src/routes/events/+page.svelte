@@ -33,7 +33,7 @@
 </script>
 
 <section class="w-screen">
-	<div class="mx-auto w-96">
+	<div class="mx-auto w-80 md:w-96">
 		<div class="py-24">
 			<h1 class="text-6xl font-black text-gray-800 font-inter">Events</h1>
 		</div>
