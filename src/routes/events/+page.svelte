@@ -57,7 +57,7 @@
 					class="flex flex-col p-4 my-4 duration-200 ease-in-out rounded-md cursor-pointer bg-stone-200 hover:shadow-lg"
 				>
 					<div class="pb-6 pr-8">
-						<span class="text-base text-gray-800 font-inter">{event.title}</span>
+						<span class="text-lg text-gray-800 font-inter">{event.title}</span>
 					</div>
 					<div class="pr-8">
 						<span class="text-sm text-gray-800 font-inter"
