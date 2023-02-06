@@ -24,7 +24,7 @@ export const load = (async ({ params }) => {
 
 	const data = JSON.parse(JSON.stringify(event));
 
-	console.log(data)
+	console.log(data);
 
 	return { event: data };
 }) satisfies PageServerLoad;

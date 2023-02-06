@@ -13,8 +13,8 @@ export function calculateDifferenceFormatted(date1: DateTime, date2: DateTime): 
 	const shifted = differenceMillis
 		.rescale()
 		.shiftTo('days', 'hours', 'minutes', 'seconds', 'milliseconds')
-		.toObject(); 
-	
+		.toObject();
+
 	return {
 		days: Math.abs(shifted.days || 0),
 		hours: Math.abs(shifted.hours || 0),
@@ -25,14 +25,14 @@ export function calculateDifferenceFormatted(date1: DateTime, date2: DateTime): 
 }
 
 export function formatTimeLeft(timeLeft: DurationLeftType) {
-	let str = (timeLeft.negative)? '- ' : '';
-	str += (timeLeft.days > 0)? dateNumberToFormatted(timeLeft.days) + 'd. ' : '';
-	str += (timeLeft.hours > 0)? dateNumberToFormatted(timeLeft.hours) + 'hr. ': '';
-	str += (timeLeft.minutes > 0)? dateNumberToFormatted(timeLeft.minutes) + 'min. ': '';
-	str += (timeLeft.seconds > 0)? dateNumberToFormatted(timeLeft.seconds) + 'sec.' : '';
+	let str = timeLeft.negative ? '- ' : '';
+	str += timeLeft.days > 0 ? dateNumberToFormatted(timeLeft.days) + 'd. ' : '';
+	str += timeLeft.hours > 0 ? dateNumberToFormatted(timeLeft.hours) + 'hr. ' : '';
+	str += timeLeft.minutes > 0 ? dateNumberToFormatted(timeLeft.minutes) + 'min. ' : '';
+	str += timeLeft.seconds > 0 ? dateNumberToFormatted(timeLeft.seconds) + 'sec.' : '';
 	return str;
 }
- 
+
 export function serverCountdownToLuxon(data: ServerCountdownType) {
 	return DateTime.fromISO(data.dateTime).setZone(data.zone);
 }

@@ -6,12 +6,12 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
-			'$db': './src/db',
-			'$types': './src/types',
-			'$stores': './src/stores',
+			$db: './src/db',
+			$types: './src/types',
+			$stores: './src/stores'
 		}
 	},
-	preprocess: vitePreprocess(),
+	preprocess: vitePreprocess()
 };
 
 export default config;

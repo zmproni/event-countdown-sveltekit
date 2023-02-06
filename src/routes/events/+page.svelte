@@ -1,6 +1,6 @@
 <script lang="ts">
 	// TODO: Add transitions when switching tabs
-	
+
 	import { goto } from '$app/navigation';
 	import type { ServerCountdownsType, ServerCountdownType } from '$lib/types';
 	import {
@@ -39,13 +39,17 @@
 		</div>
 		<div class="flex flex-row">
 			<div on:click={upcomingClicked} on:keydown={upcomingClicked} class="pr-16 cursor-pointer ">
-				<span class="text-2xl duration-200 ease-in-out {upcomingSelected ? 'text-gray-800' : 'text-slate-400 font-inter hover:text-gray-600'}"
-					>Upcoming</span
+				<span
+					class="text-2xl duration-200 ease-in-out {upcomingSelected
+						? 'text-gray-800'
+						: 'text-slate-400 font-inter hover:text-gray-600'}">Upcoming</span
 				>
 			</div>
 			<div on:click={passedClicked} on:keydown={passedClicked} class="pr-16 cursor-pointer">
-				<span class="text-2xl duration-200 ease-in-out {!upcomingSelected ? 'text-gray-800' : 'text-slate-400 hover:text-gray-600 font-inter'}"
-					>Passed</span
+				<span
+					class="text-2xl duration-200 ease-in-out {!upcomingSelected
+						? 'text-gray-800'
+						: 'text-slate-400 hover:text-gray-600 font-inter'}">Passed</span
 				>
 			</div>
 		</div>
