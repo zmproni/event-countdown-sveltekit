@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        source: "'Source Sans Pro', sans-serif",
+        inter: "'Inter', sans-serif",
         rubik: "'Rubik', sans-serif",
       },
     },
