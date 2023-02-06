@@ -7,7 +7,7 @@
 
 <div class="block">
 	<h1
-		class="w-20 px-2 text-5xl font-black text-center text-gray-900 lg:w-44 lg:text-8xl font-rubik"
+		class="w-20 px-2 text-center font-rubik text-5xl font-black text-gray-900 lg:w-44 lg:text-8xl"
 	>
 		{dateNumberToFormatted(number)}
 	</h1>

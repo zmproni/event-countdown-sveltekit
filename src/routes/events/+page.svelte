@@ -35,21 +35,21 @@
 <section class="w-screen">
 	<div class="mx-auto w-80 md:w-96">
 		<div class="py-24">
-			<h1 class="text-6xl font-black text-gray-800 font-inter">Events</h1>
+			<h1 class="font-inter text-6xl font-black text-gray-800">Events</h1>
 		</div>
 		<div class="flex flex-row">
-			<div on:click={upcomingClicked} on:keydown={upcomingClicked} class="pr-16 cursor-pointer ">
+			<div on:click={upcomingClicked} on:keydown={upcomingClicked} class="cursor-pointer pr-16 ">
 				<span
 					class="text-2xl duration-200 ease-in-out {upcomingSelected
 						? 'text-gray-800'
-						: 'text-slate-400 font-inter hover:text-gray-600'}">Upcoming</span
+						: 'font-inter text-slate-400 hover:text-gray-600'}">Upcoming</span
 				>
 			</div>
-			<div on:click={passedClicked} on:keydown={passedClicked} class="pr-16 cursor-pointer">
+			<div on:click={passedClicked} on:keydown={passedClicked} class="cursor-pointer pr-16">
 				<span
 					class="text-2xl duration-200 ease-in-out {!upcomingSelected
 						? 'text-gray-800'
-						: 'text-slate-400 hover:text-gray-600 font-inter'}">Passed</span
+						: 'font-inter text-slate-400 hover:text-gray-600'}">Passed</span
 				>
 			</div>
 		</div>
@@ -58,18 +58,18 @@
 				<div
 					on:click={() => navigateToEventPage(event)}
 					on:keydown={() => navigateToEventPage(event)}
-					class="flex flex-col p-4 my-4 duration-200 ease-in-out rounded-md cursor-pointer bg-stone-200 hover:shadow-lg"
+					class="my-4 flex cursor-pointer flex-col rounded-md bg-stone-200 p-4 duration-200 ease-in-out hover:shadow-lg"
 				>
 					<div class="pb-6 pr-8">
-						<span class="text-lg text-gray-800 font-inter">{event.title}</span>
+						<span class="font-inter text-lg text-gray-800">{event.title}</span>
 					</div>
 					<div class="pr-8">
-						<span class="text-sm text-gray-800 font-inter"
+						<span class="font-inter text-sm text-gray-800"
 							>{serverCountdownToLuxon(event).toLocaleString(DateTime.DATETIME_FULL)}</span
 						>
 					</div>
 					<div class="pr-8">
-						<span class="text-sm font-bold text-gray-800 font-inter"
+						<span class="font-inter text-sm font-bold text-gray-800"
 							>{formatTimeLeft(
 								calculateDifferenceFormatted(serverCountdownToLuxon(event), $current)
 							)}</span

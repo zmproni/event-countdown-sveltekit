@@ -21,16 +21,16 @@
 	>
 </svelte:head>
 
-<section class="flex flex-col items-center justify-center h-screen">
+<section class="flex h-screen flex-col items-center justify-center">
 	<div class="lg:flex-1" />
-	<div class="px-16 py-4 md:px-32 lg:px-42 lg:pb-20">
-		<h2 class="font-inter text-3xl text-center text-gray-900 lg:text-5xl lg:leading-normal">
+	<div class="lg:px-42 px-16 py-4 md:px-32 lg:pb-20">
+		<h2 class="text-center font-inter text-3xl text-gray-900 lg:text-5xl lg:leading-normal">
 			{title}
 		</h2>
 	</div>
-	<div class="flex flex-row justify-center p-4 divide flex-nowrap">
+	<div class="divide flex flex-row flex-nowrap justify-center p-4">
 		{#if difference.negative}
-			<span class="w-10 px-2 text-5xl font-black text-gray-900 lg:w-44 lg:text-8xl font-rubik"
+			<span class="w-10 px-2 font-rubik text-5xl font-black text-gray-900 lg:w-44 lg:text-8xl"
 				>-</span
 			>
 		{/if}
